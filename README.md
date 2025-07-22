@@ -7,6 +7,8 @@ Implementation of least-privilege access and privilege management in Microsoft A
 ## Table of Contents
 
 - [Overview]
+- [Real-World Risk]
+- [What I Built]
 - [Diagram]
 - [Objectives]
 - [Steps Performed]
@@ -14,6 +16,7 @@ Implementation of least-privilege access and privilege management in Microsoft A
   - [2. RBAC Role Assignment]
   - [3. Permission Verification]
   - [4. Defender for Servers / JIT Access]
+  - [5. Cleanup]
 - [Screenshots]
 - [Lessons Learned]
 - [References]
@@ -23,6 +26,21 @@ Implementation of least-privilege access and privilege management in Microsoft A
 ## Overview
 
 This lab demonstrates how to apply least-privilege principles to Azure infrastructure using RBAC and (if available) Just-In-Time (JIT) VM access. RBAC is used to assign minimal, task-specific permissions to users. JIT, part of Defender for Servers, restricts VM management port exposure to narrow time windows, minimizing the attack surface. These controls align with Zero Trust, real-world privilege management, and compliance standards.
+
+---
+
+## Real-World Risk
+Standing, excessive, or overly broad permissions are a leading cause of cloud breaches. Attackers often target accounts with unnecessary admin rights or always-open management ports. Without least-privilege RBAC and time-based access controls, a single compromised credential or unpatched management port can give attackers persistent access to critical resources. By enforcing granular RBAC and implementing Just-In-Time (JIT) VM access, organizations reduce both the attack surface and the opportunity for privilege escalation, aligning with Zero Trust and modern compliance requirements.
+
+---
+
+## What I Built
+
+- Provisioned an isolated resource group and a secure Azure virtual machine.
+- Created an Azure AD test user and applied the Virtual Machine Contributor role using RBAC, enforcing least-privilege access.
+- Enabled Microsoft Defender for Servers, preparing the environment for advanced security controls like Just-In-Time (JIT) VM access.
+- Documented (and, if available, demonstrated) the process of restricting VM management port access to time-limited, on-demand windows via JIT, drastically reducing potential exposure to attacks.
+- Captured every technical step with screenshots and a clear architecture diagram to provide technical and non-technical audiences full visibility into the security controls applied.
 
 ---
 
@@ -61,6 +79,11 @@ This lab demonstrates how to apply least-privilege principles to Azure infrastru
 4. Defender for Servers / JIT Access
    - Enabled Microsoft Defender for Servers on the subscription to allow JIT features (*Note: Just-In-Time VM Access could not be enabled in this environment due to Azure portal limitations for this subscription. In a standard enterprise subscription, the process would continue by enabling JIT on the VM via Defender for Cloud, as documented here.)
    - Demonstrated understanding and documented steps for JIT access control, including screenshot of Defender for Servers activation.
+  
+5. Cleanup
+   - Deleted the resource group (SecLab2-RG), ensuring all associated resources (VM, disks, NIC, NSG, public IP) were also removed to prevent ongoing charges.
+   - Disabled Defender for Servers in the subscription after the lab to avoid future costs from advanced security features.
+   - Verified removal in the Azure Portal to confirm there are no remaining active resources or security plans from the lab.
 
 ---
 
