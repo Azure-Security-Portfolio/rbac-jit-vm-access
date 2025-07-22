@@ -12,11 +12,12 @@ Implementation of least-privilege access and privilege management in Microsoft A
 - [Diagram]
 - [Objectives]
 - [Steps Performed]
-  - [1. User and Group Creation]
-  - [2. RBAC Role Assignment]
-  - [3. Permission Verification]
-  - [4. Defender for Servers / JIT Access]
-  - [5. Cleanup]
+  - [1. Resource Group Creation]
+  - [2. Virtual Machine Deployment]
+  - [3. RBAC Role Assignment]
+  - [4. RBAC Assignment Verification]
+  - [5. Enable Defender for Servers]
+  - [6. Cleanup]
 - [Screenshots]
 - [Lessons Learned]
 - [References]
@@ -61,29 +62,27 @@ Standing, excessive, or overly broad permissions are a leading cause of cloud br
 
 ## Steps Performed
 
-1. Resource and VM Creation
-   - Created resource group: SecLab2-RG in East US.
-   - Deployed a Windows Server 2022 VM: SecLab2-VM (size: B1s).
-   - Verified creation and resource organization.
+1. Resource Group Creation
+   - Created the resource group SecLab2-RG for isolation and simple cleanup (Screenshot: ResourceGroup-Create-SecLab2-RG.png)
 
-2. RBAC Role Assignment
-   - Created Azure AD test user: labtestuser@azurelabstest.onmicrosoft.com.
-   - Assigned the “Virtual Machine Contributor” role to the test user at the resource group scope using Access Control (IAM).
-   - Confirmed the user’s role assignment via the portal.
+2. Virtual Machine Deployment
+   - Deployed Windows Server 2022 VM SecLab2-VM (B1s size) in the new resource group.
+   - Verified VM status and public IP assignment (Screenshot: VM-Overview-SecLab2-VM.png)
 
-3. Permission Verification
-   - Confirmed the test user could only start/stop/restart the VM and could not delete the resource group or manage roles.
-   -Verified effective permissions using the Access Control (IAM) “Role assignments” and “Check access” features.
-   - (Direct login as test user not possible due to Azure subscription limits; permissions documented via admin screenshots.)
+3. RBAC Role Assignment
+   - Opened Access control (IAM) and started a new role assignment.
+   - Assigned the Virtual Machine Contributor role to test user at the resource group scope (Screenshot: RBAC-AddRoleAssignment-VirtualMachineContributor.png)
 
-4. Defender for Servers / JIT Access
-   - Enabled Microsoft Defender for Servers on the subscription to allow JIT features (*Note: Just-In-Time VM Access could not be enabled in this environment due to Azure portal limitations for this subscription. In a standard enterprise subscription, the process would continue by enabling JIT on the VM via Defender for Cloud, as documented here.)
-   - Demonstrated understanding and documented steps for JIT access control, including screenshot of Defender for Servers activation.
-  
-5. Cleanup
-   - Deleted the resource group (SecLab2-RG), ensuring all associated resources (VM, disks, NIC, NSG, public IP) were also removed to prevent ongoing charges.
-   - Disabled Defender for Servers in the subscription after the lab to avoid future costs from advanced security features.
-   - Verified removal in the Azure Portal to confirm there are no remaining active resources or security plans from the lab.
+4. RBAC Assignment Verification
+   - Confirmed via the Role Assignments tab that the test user had the correct least-privilege role (Screenshot: RBAC-RoleAssignments-VM-or-RG.png)
+   - Additionally verified the test user was scoped correctly on the resource group (Screenshot: RBAC-LabTestUser-VirtualMachineContributor-SecLab2-RG.png)
+
+5. Enable Defender for Servers
+   - Enabled the Microsoft Defender for Servers plan in the subscription as a prerequisite for advanced controls (such as JIT. Screenshot: DefenderForServers-Enabled-AfterSave.png)
+
+6. Cleanup
+   - Deleted the resource group SecLab2-RG, removing all lab resources (VM, disks, NIC, public IP, NSG) to prevent ongoing costs.
+   - Disabled Defender for Servers in the subscription after the lab.
 
 ---
 
@@ -99,20 +98,6 @@ Standing, excessive, or overly broad permissions are a leading cause of cloud br
 | 4    | RBAC-RoleAssignments-VM-or-RG.png                         | Role assignments tab showing assigned users/roles              |
 | 5    | RBAC-LabTestUser-VirtualMachineContributor-SecLab2-RG.png | Specific RBAC assignment for Lab Test User on RG               |
 | 6    | DefenderForServers-Enabled-AfterSave.png                  | Defender for Servers plan enabled in subscription              |
-
-## Screenshot Explanations
-
-1. ResourceGroup-Create-SecLab2-RG.png: Shows the Azure resource group created for the lab and its contents.
-
-2. VM-Overview-SecLab2-VM.png: Displays the details and status of the virtual machine, confirming deployment.
-
-3. RBAC-AddRoleAssignment-VirtualMachineContributor.png: Captures the process of assigning the Virtual Machine Contributor role via IAM.
-
-4. RBAC-RoleAssignments-VM-or-RG.png: Proves which users/roles are assigned at the VM or resource group scope.
-
-5. RBAC-LabTestUser-VirtualMachineContributor-SecLab2-RG.png: Confirms the test user is assigned least-privilege access (VM Contributor role) at the resource group level.
-
-6. DefenderForServers-Enabled-AfterSave.png: Documents that Defender for Servers was enabled to support advanced security controls (like JIT).
 
 ---
 
