@@ -113,20 +113,11 @@ Standing, excessive, or overly broad permissions are a leading cause of cloud br
 
 ## References
 
-- Azure role-based access control (RBAC)
-(https://learn.microsoft.com/en-us/azure/role-based-access-control/overview)
-
-- Just-In-Time VM Access in Defender for Cloud
-(https://learn.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-usage)
-
-- Microsoft Defender for Servers
-(https://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers)
-
-- Resource groups in Azure
-(https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)
-
-- Zero Trust Guidance: Zero Trust Security Principles
-(https://www.microsoft.com/en-us/security/business/zero-trust)
+- [Azure role-based access control (RBAC)](https://learn.microsoft.com/en-us/azure/role-based-access-control/overview)
+- [Just-In-Time VM Access in Defender for Cloud](https://learn.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-usage)
+- [Microsoft Defender for Servers](https://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers)
+- [Resource groups in Azure](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)
+- [Zero Trust Guidance: Zero Trust Security Principles](https://www.microsoft.com/en-us/security/business/zero-trust)
 
 ---
 
