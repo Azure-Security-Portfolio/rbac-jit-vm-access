@@ -88,7 +88,7 @@ Standing, excessive, or overly broad permissions are a leading cause of cloud br
 
 ## Screenshots
 
-*All screenshots are included in the screenshots/ folder.
+*All screenshots are included in the screenshots/ folder.*
 
 | Step | Filename                                                  | Description                                                    |
 | ---- | --------------------------------------------------------- | -------------------------------------------------------------- |
