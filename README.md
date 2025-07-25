@@ -121,4 +121,6 @@ Standing, excessive, or overly broad permissions are a leading cause of cloud br
 
 ---
 
-Sebastian Silva C. – July, 2025 – Berlin, Germany.
+Sebastian Silva C. – July 2025 – Berlin, Germany.
+- [LinkedIn](https://www.linkedin.com/in/sebastiansilc/)
+- [GitHub](https://github.com/SebaSilC)
