@@ -6,21 +6,21 @@ Implementation of least-privilege access and privilege management in Microsoft A
 
 ## Table of Contents
 
-- [Overview]
-- [Real-World Risk]
-- [What I Built]
-- [Diagram]
-- [Objectives]
-- [Steps Performed]
+- [Overview](#overview)
+- [Real-World Risk](#real-world-risk)
+- [What I Built](#what-i-built)
+- [Diagram](#diagram)
+- [Objectives](#objectives)
+- [Steps Performed](#steps-performed)
   - [1. Resource Group Creation]
   - [2. Virtual Machine Deployment]
   - [3. RBAC Role Assignment]
   - [4. RBAC Assignment Verification]
   - [5. Enable Defender for Servers]
   - [6. Cleanup]
-- [Screenshots]
-- [Lessons Learned]
-- [References]
+- [Screenshots](#screenshots)
+- [Lessons Learned](#lessons-learned)
+- [References](#references)
 
 ---
 
