@@ -21,6 +21,7 @@ Implementation of least-privilege access and privilege management in Microsoft A
 - [Screenshots](#screenshots)
 - [Lessons Learned](#lessons-learned)
 - [References](#references)
+- [Contact](#contact)
 
 ---
 
@@ -119,8 +120,7 @@ Standing, excessive, or overly broad permissions are a leading cause of cloud br
 - [Resource groups in Azure](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)
 - [Zero Trust Guidance: Zero Trust Security Principles](https://www.microsoft.com/en-us/security/business/zero-trust)
 
----
+## Contact
 
-Sebastian Silva C. – July 2025 – Berlin, Germany.
-- [LinkedIn](https://www.linkedin.com/in/sebastiansilc/)
-- [GitHub](https://github.com/SebaSilC)
+Sebastian Silva C. – July, 2025 – Berlin, Germany.  
+[LinkedIn](https://www.linkedin.com/in/sebastiansilc) | [GitHub](https://github.com/SebaSilC) | [sebastian@playbookvisualarts.com](mailto:sebastian@playbookvisualarts.com)
