@@ -64,22 +64,22 @@ Standing, excessive, or overly broad permissions are a leading cause of cloud br
 ## Steps Performed
 
 **1. Resource Group Creation**
-   - Created the resource group SecLab2-RG for isolation and simple cleanup *(Screenshot: ResourceGroup-Create-SecLab2-RG.png)*
+   - Created the resource group SecLab2-RG for isolation and simple cleanup *(Screenshot: `ResourceGroup-Create-SecLab2-RG.png`)*
 
 **2. Virtual Machine Deployment**
    - Deployed Windows Server 2022 VM SecLab2-VM (B1s size) in the new resource group.
-   - Verified VM status and public IP assignment *(Screenshot: VM-Overview-SecLab2-VM.png)*
+   - Verified VM status and public IP assignment *(Screenshot: `VM-Overview-SecLab2-VM.png`)*
 
 **3. RBAC Role Assignment**
    - Opened Access control (IAM) and started a new role assignment.
-   - Assigned the Virtual Machine Contributor role to test user at the resource group scope *(Screenshot: RBAC-AddRoleAssignment-VirtualMachineContributor.png)*
+   - Assigned the Virtual Machine Contributor role to test user at the resource group scope *(Screenshot: `RBAC-AddRoleAssignment-VirtualMachineContributor.png`)*
 
 **4. RBAC Assignment Verification**
-   - Confirmed via the Role Assignments tab that the test user had the correct least-privilege role *(Screenshot: RBAC-RoleAssignments-VM-or-RG.png)*
-   - Additionally verified the test user was scoped correctly on the resource group *(Screenshot: RBAC-LabTestUser-VirtualMachineContributor-SecLab2-RG.png)*
+   - Confirmed via the Role Assignments tab that the test user had the correct least-privilege role *(Screenshot: `RBAC-RoleAssignments-VM-or-RG.png`)*
+   - Additionally verified the test user was scoped correctly on the resource group *(Screenshot: `RBAC-LabTestUser-VirtualMachineContributor-SecLab2-RG.png`)*
 
 **5. Enable Defender for Servers**
-   - Enabled the Microsoft Defender for Servers plan in the subscription as a prerequisite for advanced controls (such as JIT. *Screenshot: DefenderForServers-Enabled-AfterSave.png)*
+   - Enabled the Microsoft Defender for Servers plan in the subscription as a prerequisite for advanced controls (such as JIT. *Screenshot: `DefenderForServers-Enabled-AfterSave.png`)*
 
 **6. Cleanup**
    - Deleted the resource group SecLab2-RG, removing all lab resources (VM, disks, NIC, public IP, NSG) to prevent ongoing costs.
@@ -89,7 +89,7 @@ Standing, excessive, or overly broad permissions are a leading cause of cloud br
 
 ## Screenshots
 
-*All screenshots are included in the screenshots/ folder.*
+*All screenshots are included in the `screenshots/` folder.*
 
 | Step | Filename                                                  | Description                                                    |
 | ---- | --------------------------------------------------------- | -------------------------------------------------------------- |
